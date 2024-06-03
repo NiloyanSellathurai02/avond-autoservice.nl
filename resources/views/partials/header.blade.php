@@ -14,24 +14,25 @@
                     <nav class="main_menu navbar navbar-expand-lg">
                         <div class="main_menu_inner collapse navbar-collapse justify-content-center" id="main_menu_dropdown">
                             <ul class="main_menu_list unordered_list_center">
-                                <li class="active">
-                                    <a class="nav-link" href="{{ url('/') }}" id="home_submenu" role="button" aria-expanded="false">Home</a>
+                                <li class="{{ request()->is('/') ? 'active' : '' }}">
+                                    <a class="nav-link" href="{{ url('/') }}">Home</a>
                                 </li>
-                                <li>
+                                <li class="{{ request()->is('service') ? 'active' : '' }}">
                                     <a href="{{ url('/service') }}">Diensten</a>
                                 </li>
-                                <li>
+                                <li class="{{ request()->is('about') ? 'active' : '' }}">
                                     <a href="{{ url('/about') }}">Over ons</a>
                                 </li>
-                                <li>
+                                <li class="{{ request()->is('portfolio') ? 'active' : '' }}">
                                     <a href="{{ url('/portfolio') }}">De werkruimte</a>
                                 </li>
-                                <li>
+                                <li class="{{ request()->is('contact') ? 'active' : '' }}">
                                     <a href="{{ url('/contact') }}">Contact</a>
                                 </li>
                             </ul>
                         </div>
                     </nav>
+
                 </div>
                 <div class="col-lg-3 col-5">
                     <ul class="header_btns_group unordered_list_end">

@@ -19,9 +19,7 @@
     <section class="contact_section section_space_sm">
         <div class="container">
             <div class="section_heading">
-                <h3 class="heading_text mb-0 wow" data-splitting>Contact</h3>
             </div>
-
             <div class="row">
                 <div class="col-lg-4">
                     <div class="contact_info_box">
@@ -32,13 +30,13 @@
                                     Avond Autoservice
                                 </span>
                                 <span class="info_text mb-3">
-                                    {{ $contactDetail->address }}
+                                    {{ $contactDetail->address ?? 'Geen adres beschikbaar' }}
                                 </span>
                             </li>
                             <li>
                                 <span class="info_text mb-3">
                                     <span class="d-block">
-                                        <a href="tel:{{ $contactDetail->phone }}"> Tel: {{ $contactDetail->phone }}</a>
+                                        <a href="tel:{{ $contactDetail->phone ?? '#' }}"> Tel: {{ $contactDetail->phone ?? 'Geen telefoonnummer beschikbaar' }}</a>
                                     </span>
                                 </span>
                             </li>
@@ -49,17 +47,12 @@
                     <div class="contact_info_box">
                         <h3 class="item_title">Openingstijden overdag</h3>
                         <ul class="info_list unordered_list_block">
-                            @foreach (explode(',', $contactDetail->daytime_hours) as $daytime_hour)
-                                @php
-                                    list($day, $hours) = explode(':', $daytime_hour);
-                                @endphp
-                                <li>
-                                    <span class="info_text d-flex align-items-center justify-content-between">
-                                        <span>{{ $day }}</span>
-                                        <span>{{ $hours }}</span>
-                                    </span>
-                                </li>
-                            @endforeach
+                            <li>
+                                <span class="info_text d-flex align-items-center justify-content-between">
+                                    <span>Maandag - Vrijdag</span>
+                                    <span>{{ $contactDetail->daytime_hours ?? 'Geen openingstijden beschikbaar' }}</span>
+                                </span>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -67,24 +60,18 @@
                     <div class="contact_info_box">
                         <h3 class="item_title">Openingstijden 's avonds</h3>
                         <ul class="info_list unordered_list_block">
-                            @foreach (explode(',', $contactDetail->evening_hours) as $evening_hour)
-                                @php
-                                    list($day, $hours) = explode(':', $evening_hour);
-                                @endphp
-                                <li>
-                                    <span class="info_text d-flex align-items-center justify-content-between">
-                                        <span>{{ $day }}</span>
-                                        <span>{{ $hours }}</span>
-                                    </span>
-                                </li>
-                            @endforeach
+                            <li>
+                                <span class="info_text d-flex align-items-center justify-content-between">
+                                    <span>Maandag - Vrijdag</span>
+                                    <span>{{ $contactDetail->evening_hours ?? 'Geen openingstijden beschikbaar' }}</span>
+                                </span>
+                            </li>
                         </ul>
                     </div>
                 </div>
-
                 <div class="col-12">
                     <div class="gmap_canvas">
-                        <iframe src="https://www.google.com/maps/embed/v1/place?q={{ urlencode($contactDetail->address) }}&key=YOUR_GOOGLE_MAPS_API_KEY"></iframe>
+                        <iframe src="https://www.google.com/maps/embed/v1/place?q={{ urlencode($contactDetail->address ?? 'Almere') }}&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"></iframe>
                     </div>
                 </div>
             </div>
