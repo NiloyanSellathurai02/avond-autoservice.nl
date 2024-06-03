@@ -1,36 +1,93 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="csrf-token" content="{{ csrf_token() }}">
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>Avond Autoservice</title>
+    <link rel="shortcut icon" href="{{ asset('assets/images/site_logo/logo_blue.svg') }}">
 
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+    <!-- Fraimwork - CSS Include -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/bootstrap.min.css') }}">
 
-        <!-- Scripts -->
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
-    </head>
-    <body class="font-sans antialiased">
-        <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
-            @include('layouts.navigation')
+    <!-- Icon Font - CSS Include -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/fontawesome.css') }}">
 
-            <!-- Page Heading -->
-            @isset($header)
-                <header class="bg-white dark:bg-gray-800 shadow">
-                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                        {{ $header }}
-                    </div>
-                </header>
-            @endisset
+    <!-- Animation - CSS Include -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/animate.css') }}">
 
-            <!-- Page Content -->
-            <main>
-                {{ $slot }}
-            </main>
-        </div>
-    </body>
+    <!-- Cursor - CSS Include -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/cursor.css') }}">
+
+    <!-- Carousel - CSS Include -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/slick.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/slick-theme.css') }}">
+
+    <!-- Video & Image Popup - CSS Include -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/magnific-popup.css') }}">
+
+    <!-- Vanilla Calendar - CSS Include -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/vanilla-calendar.min.css') }}">
+
+    <!-- Counter - CSS Include -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/odometer.css') }}">
+
+    <!-- Pricing Range - CSS Include -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/jquery-ui.css') }}">
+
+    <!-- Custom - CSS Include -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/style.css') }}">
+</head>
+<body>
+    <div class="page_wrapper">
+        @include('partials.header')
+        @yield('content')
+        @include('partials.footer')
+    </div>
+
+    <!-- Fraimwork - Jquery Include -->
+    <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
+    <script src="{{ asset('assets/js/popper.min.js') }}"></script>
+    <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('assets/js/bootstrap-dropdown-ml-hack.js') }}"></script>
+
+    <!-- Animation - jquery include -->
+    <script src="{{ asset('assets/js/cursor.js') }}"></script>
+    <script src="{{ asset('assets/js/wow.min.js') }}"></script>
+    <script src="{{ asset('assets/js/tilt.min.js') }}"></script>
+    <script src="{{ asset('assets/js/parallaxie.js') }}"></script>
+    <script src="{{ asset('assets/js/parallax-scroll.js') }}"></script>
+
+    <!-- Text Animation - Jquery Include -->
+    <script src="{{ asset('assets/js/splitting.min.js') }}"></script>
+
+    <!-- Carousel - Jquery Include -->
+    <script src="{{ asset('assets/js/slick.min.js') }}"></script>
+
+    <!-- Video & Image Popup - Jquery Include -->
+    <script src="{{ asset('assets/js/magnific-popup.min.js') }}"></script>
+
+    <!-- Counter - Jquery Include -->
+    <script src="{{ asset('assets/js/appear.js') }}"></script>
+    <script src="{{ asset('assets/js/odometer.min.js') }}"></script>
+
+    <!-- Countdown Timer - jquery include -->
+    <script src="{{ asset('assets/js/countdown.js') }}"></script>
+
+    <!-- Vanilla Calendar - Jquery Include -->
+    <script src="{{ asset('assets/js/vanilla-calendar.min.js') }}"></script>
+
+    <!-- Image Before After - Jquery Include -->
+    <script src="{{ asset('assets/js/imagebeforeafter.js') }}"></script>
+
+    <!-- Pricing Range - Jquery Include -->
+    <script src="{{ asset('assets/js/jquery-ui.js') }}"></script>
+
+    <!-- Dark & Light Mode - Jquery Include -->
+    <script src="{{ asset('assets/js/dark-light.js') }}"></script>
+
+    <!-- Custom - Jquery Include -->
+    <script src="{{ asset('assets/js/main.js') }}"></script>
+</body>
 </html>
