@@ -2,6 +2,14 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ContactDetailController;
+
+Route::get('/', [ContactDetailController::class, 'welcome'])->name('welcome');
+Route::get('/contact', [ContactDetailController::class, 'contact'])->name('contact');
+Route::get('/admin/contact', [ContactDetailController::class, 'edit'])->name('contact.edit');
+Route::post('/admin/contact', [ContactDetailController::class, 'update'])->name('contact.update');
+
+
 
 
 Route::get('/', function () {
@@ -36,6 +44,9 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
-Auth::routes();
+// Auth::routes();
+
+
+
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

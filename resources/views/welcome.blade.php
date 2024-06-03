@@ -102,7 +102,7 @@
         </div>
         <div class="col-">
             <a class="brand_logo_item">
-                <img src="{{ asset('assets/images/brands/brand_logo_img_mini.svg') }}" alt="AUDI Logo">
+                <img src="{{ asset('assets/images/brands/brand_logo_img_audi.svg') }}" alt="AUDI Logo">
             </a>
         </div>
         <div class="col-">
@@ -632,89 +632,69 @@ stip. Wij verzorgen uw auto tijdens onze avonduren.</p>
 </section>
 <!-- Testimonial Section - End ================================================== -->
 
-<!-- Contact Section - Start ================================================== -->
-<section class="contact_section section_space_sm">
-    <div class="container">
-        <div class="section_heading">
-            <h3 class="heading_text mb-0 wow" data-splitting>Contact</h3>
-        </div>
-        <div class="row">
-            <div class="col-lg-4">
-                <div class="contact_info_box">
-                    <h3 class="item_title">Adres</h3>
-                    <ul class="info_list unordered_list_block pe-lg-2">
-                        <li>
-                            <span class="info_text mb-3">Avond Autoservice</span>
-                            <span class="info_text mb-3">Markerkant 12 29, 1314 AJ Almere</span>
-                        </li>
-                        <li>
-                            <span class="info_text mb-3">
-                                <span class="d-block">
-                                    <a href="tel:+06 39565379">Tel: +31 639565379</a>
+ <!-- Contact Section - Start
+    ================================================== -->
+    <section class="contact_section section_space_sm">
+        <div class="container">
+            <div class="section_heading">
+            </div>
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="contact_info_box">
+                        <h3 class="item_title">Adres</h3>
+                        <ul class="info_list unordered_list_block pe-lg-2">
+                            <li>
+                                <span class="info_text mb-3">
+                                    Avond Autoservice
                                 </span>
-                            </span>
-                        </li>
-                    </ul>
+                                <span class="info_text mb-3">
+                                    {{ $contactDetail->address ?? 'Geen adres beschikbaar' }}
+                                </span>
+                            </li>
+                            <li>
+                                <span class="info_text mb-3">
+                                    <span class="d-block">
+                                        <a href="tel:{{ $contactDetail->phone ?? '#' }}"> Tel: {{ $contactDetail->phone ?? 'Geen telefoonnummer beschikbaar' }}</a>
+                                    </span>
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="contact_info_box">
-                    <h3 class="item_title">Openingstijden overdag</h3>
-                    <ul class="info_list unordered_list_block">
-                        <li>
-                            <span class="info_text d-flex align-items-center justify-content-between">
-                                <span>Maandag - Vrijdag</span>
-                                <span>9:00 - 17:00</span>
-                            </span>
-                        </li>
-                        <li>
-                            <span class="info_text d-flex align-items-center justify-content-between">
-                                <span>Zaterdag / Feestdagen</span>
-                                <span>Op afspraak</span>
-                            </span>
-                        </li>
-                        <li>
-                            <span class="info_text d-flex align-items-center justify-content-between">
-                                <span>Zondag</span>
-                                <span>Gesloten</span>
-                            </span>
-                        </li>
-                        <li></li>
-                    </ul>
+                <div class="col-lg-4">
+                    <div class="contact_info_box">
+                        <h3 class="item_title">Openingstijden overdag</h3>
+                        <ul class="info_list unordered_list_block">
+                            <li>
+                                <span class="info_text d-flex align-items-center justify-content-between">
+                                    <span>Maandag - Vrijdag</span>
+                                    <span>{{ $contactDetail->daytime_hours ?? 'Geen openingstijden beschikbaar' }}</span>
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="contact_info_box">
-                    <h3 class="item_title">Openingstijden 's avonds</h3>
-                    <ul class="info_list unordered_list_block">
-                        <li>
-                            <span class="info_text d-flex align-items-center justify-content-between">
-                                <span>Maandag - Vrijdag</span>
-                                <span>20:00 - 00:00</span>
-                            </span>
-                        </li>
-                        <li>
-                            <span class="info_text d-flex align-items-center justify-content-between">
-                                <span>Zaterdag / Feestdagen</span>
-                                <span>Op afspraak</span>
-                            </span>
-                        </li>
-                        <li>
-                            <span class="info_text d-flex align-items-center justify-content-between">
-                                <span>Zondag</span>
-                                <span>Gesloten</span>
-                            </span>
-                        </li>
-                    </ul>
+                <div class="col-lg-4">
+                    <div class="contact_info_box">
+                        <h3 class="item_title">Openingstijden 's avonds</h3>
+                        <ul class="info_list unordered_list_block">
+                            <li>
+                                <span class="info_text d-flex align-items-center justify-content-between">
+                                    <span>Maandag - Vrijdag</span>
+                                    <span>{{ $contactDetail->evening_hours ?? 'Geen openingstijden beschikbaar' }}</span>
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-            <div class="col-12">
-                <div class="gmap_canvas">
-                    <iframe src="https://www.google.com/maps/embed/v1/place?q=Avond+Auto+Service,+Markerkant+12+29,+1314+AJ+Almere,+Netherlands&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"></iframe>
+                <div class="col-12">
+                    <div class="gmap_canvas">
+                        <iframe src="https://www.google.com/maps/embed/v1/place?q={{ urlencode($contactDetail->address ?? 'Almere') }}&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"></iframe>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
-<!-- Contact Section - End ================================================== -->
+    </section>
+    <!-- Contact Section - End
+    ================================================== -->
 @endsection
