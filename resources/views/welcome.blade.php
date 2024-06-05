@@ -194,7 +194,7 @@
         <div class="tab-content" style="background-image: url('{{ asset('assets/images/shapes/tyre_print_5.svg') }}');">
             <div class="tab-pane fade show active" id="tab_cooling_system" role="tabpanel">
                 <div class="row align-items-center">
-                    <div class="col-lg-6">
+                    <div class="col-lg-12">
                         <div class="item_content">
                             <h3 class="title_text">Algemene Periodieke Keuring (APK)</h3>
                             <p>
@@ -253,16 +253,12 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-6">
-                        <div class="item_image">
-                            <img src="{{ asset('assets/images/products/apkk.png') }}" alt="APK Keuring">
-                        </div>
-                    </div>
+
                 </div>
             </div>
             <div class="tab-pane fade" id="tab_tire_repair" role="tabpanel">
                 <div class="row align-items-center">
-                    <div class="col-lg-6">
+                    <div class="col-lg-12">
                         <div class="item_content">
                             <h3 class="title_text">AUTO REPARATIE EN ONDERHOUD BIJ Avond Autoservice</h3>
                             <p>
@@ -304,16 +300,12 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-6">
-                        <div class="item_image">
-                            <img src="{{ asset('assets/images/products/onderhoud.webp') }}" alt="">
-                        </div>
-                    </div>
+
                 </div>
             </div>
             <div class="tab-pane fade" id="tab_steering_repair" role="tabpanel">
                 <div class="row align-items-center">
-                    <div class="col-lg-6">
+                    <div class="col-lg-12">
                         <div class="item_content">
                             <h3 class="title_text">Probleem met uw auto?</h3>
                             <p>
@@ -340,10 +332,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-6">
-                        <div class="item_image">
-                            <img src="{{ asset('assets/images/products/diagnose.webp') }}" alt="">
-                        </div>
+
                     </div>
                 </div>
             </div>
@@ -359,7 +348,7 @@
                     </div>
                     <div class="col-lg-6">
                         <div class="item_image">
-                            <img src="{{ asset('assets/images/products/bedrijfswagen.webp') }}" alt="">
+                            <img src="d" alt="">
                         </div>
                     </div>
                 </div>
@@ -437,7 +426,7 @@ stip. Wij verzorgen uw auto tijdens onze avonduren.</p>
                     </div>
                 </div>
                 <div class="image_widget">
-                    <img src="{{ asset('assets/images/about/about_image_4.jpg') }}" alt="">
+                    <img src="{{ asset('assets/images/about/about_image_4.png') }}" alt="">
                 </div>
             </div>
         </div>
@@ -648,7 +637,7 @@ stip. Wij verzorgen uw auto tijdens onze avonduren.</p>
                                     Avond Autoservice
                                 </span>
                                 <span class="info_text mb-3">
-                                    {{ $contactDetail->address ?? 'Geen adres beschikbaar' }}
+                                    {{ $contactDetail->address ?? 'Geen woord' }}
                                 </span>
                             </li>
                             <li>

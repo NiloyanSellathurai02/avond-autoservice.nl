@@ -10,12 +10,14 @@ class ContactDetailController extends Controller
     public function home()
     {
         $contactDetail = ContactDetail::first();
+        die(var_dump($contactDetail));
         return view('welcome', compact('contactDetail'));
     }
 
     public function index()
     {
         $contactDetail = ContactDetail::first();
+        die(var_dump($contactDetail));
         return view('contact', compact('contactDetail'));
     }
 
