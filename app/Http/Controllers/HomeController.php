@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\ContactDetail;
 use Illuminate\Http\Request;
+use phpDocumentor\Reflection\Types\Compound;
 
 class HomeController extends Controller
 {
@@ -14,7 +15,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+//        $this->middleware('auth');
     }
 
     /**
@@ -27,5 +28,13 @@ class HomeController extends Controller
         $contactDetail = ContactDetail::first();
 
         return view('welcome', compact('contactDetail'));
+
+    }
+
+    public function contact()
+    {
+        $contactDetail = ContactDetail::first();
+
+        return view('contact' , compact(['contactDetail']));
     }
 }

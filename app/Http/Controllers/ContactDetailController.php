@@ -7,19 +7,6 @@ use Illuminate\Http\Request;
 
 class ContactDetailController extends Controller
 {
-    public function home()
-    {
-        $contactDetail = ContactDetail::first();
-        die(var_dump($contactDetail));
-        return view('welcome', compact('contactDetail'));
-    }
-
-    public function index()
-    {
-        $contactDetail = ContactDetail::first();
-        die(var_dump($contactDetail));
-        return view('contact', compact('contactDetail'));
-    }
 
     public function edit()
     {
@@ -35,6 +22,6 @@ class ContactDetailController extends Controller
         } else {
             ContactDetail::create($request->all());
         }
-        return redirect()->route('contact.index');
+        return redirect()->route('contact');
     }
 }

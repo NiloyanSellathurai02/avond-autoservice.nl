@@ -637,7 +637,8 @@ stip. Wij verzorgen uw auto tijdens onze avonduren.</p>
                                     Avond Autoservice
                                 </span>
                                 <span class="info_text mb-3">
-                                    {{ $contactDetail->address ?? 'Geen woord' }}
+
+                                    {{ $contactDetail->address ?? 'Geen Adres beschikbaar' }}
                                 </span>
                             </li>
                             <li>
@@ -656,7 +657,7 @@ stip. Wij verzorgen uw auto tijdens onze avonduren.</p>
                         <ul class="info_list unordered_list_block">
                             <li>
                                 <span class="info_text d-flex align-items-center justify-content-between">
-                                    <span>Maandag - Vrijdag</span>
+{{--                                    <span>Maandag - Vrijdag</span>--}}
                                     <span>{{ $contactDetail->daytime_hours ?? 'Geen openingstijden beschikbaar' }}</span>
                                 </span>
                             </li>
@@ -669,7 +670,7 @@ stip. Wij verzorgen uw auto tijdens onze avonduren.</p>
                         <ul class="info_list unordered_list_block">
                             <li>
                                 <span class="info_text d-flex align-items-center justify-content-between">
-                                    <span>Maandag - Vrijdag</span>
+{{--                                    <span>Maandag - Vrijdag</span>--}}
                                     <span>{{ $contactDetail->evening_hours ?? 'Geen openingstijden beschikbaar' }}</span>
                                 </span>
                             </li>

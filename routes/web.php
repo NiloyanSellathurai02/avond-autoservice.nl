@@ -1,19 +1,21 @@
 <?php
-
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactDetailController;
 
-Route::get('/', [ContactDetailController::class, 'welcome'])->name('welcome');
-Route::get('/contact', [ContactDetailController::class, 'contact'])->name('contact');
+
+
+
+Route::get('/', [HomeController::class, 'index'])->name('welcome');
+Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 Route::get('/admin/contact', [ContactDetailController::class, 'edit'])->name('contact.edit');
 Route::post('/admin/contact', [ContactDetailController::class, 'update'])->name('contact.update');
 
 
+Route::middleware('auth')->group(function () {
+    Route::get('/admin/contact/edit', [ContactDetailController::class, 'edit'])->name('contact.edit');
 
-
-Route::get('/', function () {
-    return view('welcome');
 });
 
 Route::get('/service', function () {
@@ -28,9 +30,7 @@ Route::get('/portfolio', function () {
     return view('portfolio'); // Maak een aparte portfolio.blade.php voor deze pagina
 });
 
-Route::get('/contact', function () {
-    return view('contact'); // Maak een aparte contact.blade.php voor deze pagina
-});
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -42,11 +42,9 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+
+
+
 require __DIR__.'/auth.php';
 
 // Auth::routes();
-
-
-
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

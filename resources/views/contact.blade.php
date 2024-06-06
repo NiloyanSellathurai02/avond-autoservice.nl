@@ -30,13 +30,13 @@
                                     Avond Autoservice
                                 </span>
                                 <span class="info_text mb-3">
-                                    {{ $contactDetail->address ?? 'Geen adres beschikbaar' }}
+                                    {{ $contactDetail->address }}
                                 </span>
                             </li>
                             <li>
                                 <span class="info_text mb-3">
                                     <span class="d-block">
-                                        <a href="tel:{{ $contactDetail->phone ?? '#' }}"> Tel: {{ $contactDetail->phone ?? 'Geen telefoonnummer beschikbaar' }}</a>
+                                        <a href="tel:{{ $contactDetail->phone }}"> Tel: {{ $contactDetail->phone }}</a>
                                     </span>
                                 </span>
                             </li>
@@ -49,7 +49,7 @@
                         <ul class="info_list unordered_list_block">
                             <li>
                                 <span class="info_text d-flex align-items-center justify-content-between">
-                                    <span>Maandag - Vrijdag</span>
+{{--                                    <span>Maandag - Vrijdag</span>--}}
                                     <span>{{ $contactDetail->daytime_hours ?? 'Geen openingstijden beschikbaar' }}</span>
                                 </span>
                             </li>
@@ -62,7 +62,7 @@
                         <ul class="info_list unordered_list_block">
                             <li>
                                 <span class="info_text d-flex align-items-center justify-content-between">
-                                    <span>Maandag - Vrijdag</span>
+{{--                                    <span>Maandag - Vrijdag</span>--}}
                                     <span>{{ $contactDetail->evening_hours ?? 'Geen openingstijden beschikbaar' }}</span>
                                 </span>
                             </li>

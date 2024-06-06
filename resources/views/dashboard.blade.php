@@ -1,17 +1,74 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('Dashboard') }}
-        </h2>
-    </x-slot>
+{{--@include('layouts.navigation_auth')--}}
+{{--<main class="py-4">--}}
+{{--    <div class="container">--}}
+{{--        <div class="row justify-content-center">--}}
+{{--            <div class="col-md-8">--}}
+{{--                <div class="card">--}}
+{{--                    <div class="card-header">{{ __('Dashboard') }}</div>--}}
+{{--                    <div class="small-box">--}}
+{{--                        <h1>Uitleg over het aanpassen</h1>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
+{{--</main>--}}
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900 dark:text-gray-100">
-                    {{ __("You're logged in!") }}
+@include('layouts.navigation_auth')
+<main class="py-4">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">{{ __('Dashboard') }}</div>
+                    <div class="card-body">
+                        <div class="row">
+                            <!-- Eerste Box -->
+                            <div class="col-md-4">
+                                <div class="card text-center">
+                                    <div class="card-header">
+                                        Contact
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Contact gegevens</h5>
+                                        <p class="card-text">Hier kan </p>
+                                        <a href="{{ route('contact.edit') }}" class="btn btn-primary">Bewerk</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Tweede Box -->
+                            <div class="col-md-4">
+                                <div class="card text-center">
+                                    <div class="card-header">
+                                        Box 2
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Edit Box 2</h5>
+                                        <p class="card-text">Korte uitleg over Box 2.</p>
+{{--                                        <a href="{{ route('#') }}" class="btn btn-primary">Bewerk</a>--}}
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Derde Box -->
+                            <div class="col-md-4">
+                                <div class="card text-center">
+                                    <div class="card-header">
+                                        Box 3
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Edit Box 3</h5>
+                                        <p class="card-text">Korte uitleg over Box 3.</p>
+{{--                                        <a href="{{ route('#') }}" class="btn btn-primary">Bewerk</a>--}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer text-muted">
+                        Uitleg over het aanpassen
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</x-app-layout>
+</main>
