@@ -146,7 +146,7 @@
                                         </div>
                                         <div class="card-body">
                                             <h5 class="card-title">Reviews</h5>
-                                            <a href="{{route('reviews.index')}}" class="btn btn-primary">Bewerk</a>
+                                            <a href="{{route('reviews.index')}}" class="btn btn-primary">Bekijk</a>
                                         </div>
                                     </div>
                                 </div>

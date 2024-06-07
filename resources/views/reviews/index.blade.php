@@ -10,11 +10,11 @@
 <body>
 <div class="container mt-5">
     <!-- Terug naar Dashboard Knop -->
-    <a href="/dashboard" class="btn btn-secondary mb-4">Back to Dashboard</a>
+    <a href="/dashboard" class="btn btn-secondary mb-4">Terug naar Dashboard</a>
 
     <div class="d-flex justify-content-between align-items-center mb-4">
-        <h1>Review List</h1>
-        <a href="{{ route('reviews.create') }}" class="btn btn-success">Create Review</a>
+        <h1>Review lijst</h1>
+        <a href="{{ route('reviews.create') }}" class="btn btn-success">Maak review aan</a>
     </div>
 
     @if($reviews->isEmpty())
@@ -27,11 +27,11 @@
                 <div class="card-body">
                     <h5 class="card-title">{{ $review->title }}</h5>
                     <p class="card-text">{{ $review->content }}</p>
-                    <a href="{{ route('reviews.edit', $review->id) }}" class="btn btn-primary">Edit</a>
+                    <a href="{{ route('reviews.edit', $review->id) }}" class="btn btn-primary">Bewerken</a>
                     <form method="POST" action="{{ route('reviews.destroy', $review->id) }}" style="display: inline;">
                         @csrf
                         @method('DELETE')
-                        <button type="submit" class="btn btn-danger">Delete</button>
+                        <button type="submit" class="btn btn-danger">Verwijderen</button>
                     </form>
                 </div>
             </div>
