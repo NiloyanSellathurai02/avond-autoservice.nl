@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\ContactDetail;
+use App\Models\Review;
 use Illuminate\Http\Request;
 use phpDocumentor\Reflection\Types\Compound;
 
@@ -26,9 +27,8 @@ class HomeController extends Controller
     public function index()
     {
         $contactDetail = ContactDetail::first();
-
-        return view('welcome', compact('contactDetail'));
-
+        $reviews = Review::all(); // Haal alle recensies op
+        return view('welcome', compact('contactDetail', 'reviews')); // Stuur beide naar de view
     }
 
     public function contact()

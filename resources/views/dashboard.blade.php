@@ -6,6 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Admin Dashboard</title>
+    <link rel="shortcut icon" href="{{ asset('assets/images/site_logo/logo_blue.svg') }}">
 
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
@@ -133,7 +134,6 @@
                                         </div>
                                         <div class="card-body">
                                             <h5 class="card-title">Contact gegevens</h5>
-                                            <p class="card-text">Hier kan je de openingstijden , adres en telefoonnummer veranderen.</p>
                                             <a href="{{ route('contact.edit') }}" class="btn btn-primary">Bewerk</a>
                                         </div>
                                     </div>
@@ -146,8 +146,7 @@
                                         </div>
                                         <div class="card-body">
                                             <h5 class="card-title">FAQ</h5>
-                                            <p class="card-text">....</p>
-                                            <a href="#" class="btn btn-primary">Bewerk</a>
+                                            <a href="{{route('reviews.index')}}" class="btn btn-primary">Bewerk</a>
                                         </div>
                                     </div>
                                 </div>
@@ -159,16 +158,13 @@
                                         </div>
                                         <div class="card-body">
                                             <h5 class="card-title">Afbeelding</h5>
-                                            <p class="card-text">.........</p>
                                             <a href="#" class="btn btn-primary">Bewerk</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="card-footer text-muted">
-                            Uitleg over het aanpassen
-                        </div>
+
                     </div>
                 </div>
             </div>
