@@ -142,10 +142,10 @@
                                 <div class="col-md-4">
                                     <div class="card text-center">
                                         <div class="card-header">
-                                            FAQ
+                                            Reviews
                                         </div>
                                         <div class="card-body">
-                                            <h5 class="card-title">FAQ</h5>
+                                            <h5 class="card-title">Reviews</h5>
                                             <a href="{{route('reviews.index')}}" class="btn btn-primary">Bewerk</a>
                                         </div>
                                     </div>
