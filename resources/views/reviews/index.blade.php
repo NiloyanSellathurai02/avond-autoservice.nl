@@ -9,6 +9,9 @@
 </head>
 <body>
 <div class="container mt-5">
+    <!-- Terug naar Dashboard Knop -->
+    <a href="/dashboard" class="btn btn-secondary mb-4">Back to Dashboard</a>
+
     <div class="d-flex justify-content-between align-items-center mb-4">
         <h1>Review List</h1>
         <a href="{{ route('reviews.create') }}" class="btn btn-success">Create Review</a>
