@@ -7,21 +7,21 @@ use Illuminate\Http\Request;
 
 class ReviewController extends Controller
 {
-    // Toon alle recensies
-    public function index(): \Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
+    // Toont alle recensies
+    public function index()
     {
         $reviews = Review::all();
         return view('reviews.index', compact('reviews'));
     }
 
-    // Toon het formulier om een nieuwe recensie aan te maken
-    public function create(): \Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
+    // Toont het formulier om een nieuwe recensie aan te maken
+    public function create()
     {
         return view('reviews.create');
     }
 
-    // Sla een nieuwe recensie op in de database
-    public function store(Request $request): \Illuminate\Http\RedirectResponse
+    // Slaat een nieuwe recensie op in de database
+    public function store(Request $request)
     {
         $request->validate([
             'title' => 'required|string|max:255',
@@ -30,18 +30,24 @@ class ReviewController extends Controller
             'rating' => 'required|integer|min:1|max:5',
         ]);
 
-        Review::create($request->all());
-        return redirect()->route('reviews.index')->with('success', 'Review added successfully');
+        $review = new Review();
+        $review->title = $request->title;
+        $review->content = $request->content;
+        $review->author_name = $request->author_name;
+        $review->rating = $request->rating;
+        $review->save();
+
+        return redirect()->route('reviews.index')->with('success', 'Review successfully added!');
     }
 
-    // Toon het formulier voor het bewerken van een bestaande recensie
-    public function edit(Review $review): \Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
+    // Toont het formulier voor het bewerken van een bestaande recensie
+    public function edit(Review $review)
     {
         return view('reviews.edit', compact('review'));
     }
 
-    // Update de gespecificeerde recensie in de database
-    public function update(Request $request, Review $review): \Illuminate\Http\RedirectResponse
+    // Updatet de gespecificeerde recensie in de database
+    public function update(Request $request, Review $review)
     {
         $request->validate([
             'title' => 'required|string|max:255',
@@ -54,7 +60,7 @@ class ReviewController extends Controller
         return redirect()->route('reviews.index')->with('success', 'Review updated successfully');
     }
 
-    // Verwijder de gespecificeerde recensie uit de database
+    // Verwijderd de gespecificeerde recensie uit de database
     public function destroy(Review $review): \Illuminate\Http\RedirectResponse
     {
         $review->delete();

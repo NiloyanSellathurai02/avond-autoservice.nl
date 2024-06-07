@@ -11,5 +11,8 @@ class Review extends Model
 
     public static function create(array $all)
     {
+
     }
+
+    public $timestamps = false;
 }
