@@ -9,6 +9,9 @@
 </head>
 <body>
 <div class="container mt-5">
+    <!-- Terug naar Dashboard Knop -->
+    <a href="/dashboard" class="btn btn-secondary mb-3">Terug naar Dashboard</a>
+
     <h1>Contactgegevens bewerken</h1>
     <form action="{{ route('contact.update') }}" method="POST">
         @csrf
@@ -32,10 +35,7 @@
     </form>
 </div>
 
-
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
-
-
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"></script>
 </body>
 </html>
