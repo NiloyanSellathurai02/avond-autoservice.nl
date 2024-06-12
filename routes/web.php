@@ -5,9 +5,6 @@ use App\Http\Controllers\ReviewController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactDetailController;
 
-
-
-
 // Algemene Routes
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/reviews', [ReviewController::class, 'index'])->name('reviews');
@@ -40,18 +37,10 @@ Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 Route::get('/admin/contact', [ContactDetailController::class, 'edit'])->name('contact.edit');
 Route::post('/admin/contact', [ContactDetailController::class, 'update'])->name('contact.update');
 
-//Route::get('/', [ReviewController::class, 'index'])->name('welcome');
-
-
-
-
 Route::middleware('auth')->group(function () {
     Route::get('/admin/contact/edit', [ContactDetailController::class, 'edit'])->name('contact.edit');
 
 });
-
-
-
 
 Route::get('/dashboard', function () {
     return view('dashboard');

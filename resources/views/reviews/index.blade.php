@@ -31,7 +31,7 @@
                     <form method="POST" action="{{ route('reviews.destroy', $review->id) }}" style="display: inline;">
                         @csrf
                         @method('DELETE')
-                        <button type="submit" class="btn btn-danger">Verwijderen</button>
+                        <button type="submit" class="btn btn-danger">Verwijderen-</button>
                     </form>
                 </div>
             </div>
